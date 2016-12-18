@@ -5,26 +5,26 @@ BBR，google出品的加速优化，与锐速类似。限KVM、XEN使用。
 
 一、centos6 32位和64位 下一键安装
 
-wget https://zhujiwiki.com/usr/uploads/2016/12/BBR.sh && sh BBR.sh
+wget https://zhujiwiki.com/usr/uploads/2016/12/BBR.sh && sh BBR.sh.
 建议使用centos6 32位。
 
 二、centos7 下安装
 
 1、安装
 
-wget http://mirrors.kernel.org/debian/pool/main/l/linux/linux-image-4.9.0-rc8-amd64-un
-signed_4.9~rc8-1~exp1_amd64.deb
-ar x linux-image-4.9.0-rc8-amd64-unsigned_4.9~rc8-1~exp1_amd64.deb
-tar -Jxf data.tar.xz
-install -m644 boot/vmlinuz-4.9.0-rc8-amd64 /boot/vmlinuz-4.9.0-rc8-amd64
-cp -Rav lib/modules/4.9.0-rc8-amd64 /lib/modules/
-depmod -a 4.9.0-rc8-amd64
-#centos >= 6
-dracut -f -v --hostonly -k '/lib/modules/4.9.0-rc8-amd64'  /boot/initramfs-4.9.0-rc8-a
-md64.img 4.9.0-rc8-amd64
-grub2-mkconfig -o /boot/grub2/grub.cfg
+wget http://mirrors.kernel.org/debian/pool/main/l/linux/linux-image-4.9.0-rc8-amd64-un.
+signed_4.9~rc8-1~exp1_amd64.deb.
+ar x linux-image-4.9.0-rc8-amd64-unsigned_4.9~rc8-1~exp1_amd64.deb.
+tar -Jxf data.tar.xz.
+install -m644 boot/vmlinuz-4.9.0-rc8-amd64 /boot/vmlinuz-4.9.0-rc8-amd64.
+cp -Rav lib/modules/4.9.0-rc8-amd64 /lib/modules/.
+depmod -a 4.9.0-rc8-amd64.
+#centos >= 6.
+dracut -f -v --hostonly -k '/lib/modules/4.9.0-rc8-amd64'  /boot/initramfs-4.9.0-rc8-a.
+md64.img 4.9.0-rc8-amd64.
+grub2-mkconfig -o /boot/grub2/grub.cfg.
 2、修改启动顺序
-vi /boot/grub2/grub.cfg
+vi /boot/grub2/grub.cfg.
 把4.9.0的内核启动，放到第一位。
 
 3、重启
