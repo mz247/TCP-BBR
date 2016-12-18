@@ -44,19 +44,27 @@ vi /boot/grub2/grub.cfg
 4、开启BBR
 
 echo "net.core.default_qdisc=fq" >> /etc/sysctl.conf
+
 echo "net.ipv4.tcp_congestion_control=bbr" >> /etc/sysctl.conf
+
 sysctl -p
+
 sysctl net.ipv4.tcp_available_congestion_control
+
 三、Debian8/Ubuntu14 下安装
 
 1、安装
+
 wget http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.9-rc8/linux-image-4.9.0-040900rc8-generic_4.9.0-040900rc8.201612051443_amd64.deb
+
 dpkg -i linux-image-4.9.0*.deb
 
 2、删除其余内核
 
 dpkg -l|grep linux-image 
+
 apt-get remove 内核
+
 3、更新 grub 系统引导文件并重启
 
 update-grub
